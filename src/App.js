@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Signup from "./features/auth/components/Signup";
 import Login from "./features/auth/components/Login";
 import SignupPage from "./features/pages/SignupPage";
+import Cart from "./features/cart/Cart";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/cart" element={<Cart />} />
+
 
 
         </Routes>

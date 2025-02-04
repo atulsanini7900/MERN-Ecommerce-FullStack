@@ -13,6 +13,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Children } from "react";
+import { Link } from "react-router-dom";
 
 const user = {
   name: "Tom Cook",
@@ -82,18 +83,19 @@ const Navbar = ({ children }) => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-                  <button
-                    type="button"
-                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-                  >
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">View notifications</span>
-                    <ShoppingCartIcon aria-hidden="true" className="size-6" />
-                  </button>
+                  <Link to="/cart">
+                    <button
+                      type="button"
+                      className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                    >
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">View notifications</span>
+                      <ShoppingCartIcon aria-hidden="true" className="size-6" />
+                    </button>
+                  </Link>
                   <span className="inline-flex items-center rounded-md bg-red-50 px-2 z-40 mb-6 -ml-2 py-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
                     3
                   </span>
-
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
                     <div>
@@ -179,17 +181,19 @@ const Navbar = ({ children }) => {
                     {user.email}
                   </div>
                 </div>
-                <button
-                  type="button"
-                  className="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-                >
-                  <span className="absolute -inset-1.5" />
-                  
-                  <ShoppingCartIcon aria-hidden="true" className="size-6" />
-                </button>
+                <Link to="/cart">
+                  <button
+                    type="button"
+                    className="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                  >
+                    <span className="absolute -inset-1.5" />
+
+                    <ShoppingCartIcon aria-hidden="true" className="size-6" />
+                  </button>
+                </Link>
                 <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 mb-5 -ml-2 z-40 mr-5 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
-                    3
-                  </span>
+                  3
+                </span>
               </div>
               <div className="mt-3 space-y-1 px-2">
                 {userNavigation.map((item) => (
